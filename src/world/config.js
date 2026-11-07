@@ -50,6 +50,8 @@ export const PROJECTS_INTRO = {
 
 // Featured work. Only verified projects belong in this list.
 // view / source: a real URL shows the action; null hides it.
+// image: a real screenshot in public/assets/projects; null uses the built-in
+// interactive mockup instead (Lifeguard360 has one designed for it).
 export const PROJECTS = [
   {
     id: 'lifeguard360',
@@ -59,12 +61,57 @@ export const PROJECTS = [
       'A web-based platform providing first-aid guidance across emergency categories and location-based assistance to nearby healthcare facilities.',
     tags: ['React', 'TypeScript', 'Firebase', 'Maps'],
     view: 'https://wisdomvision001.github.io/lifeguard360/',
-    source: null,
+    source: 'https://github.com/Wisdomvision001/lifeguard360',
+    image: null,
+  },
+  {
+    id: 'signal',
+    title: 'Signal',
+    subtitle: 'Real-Time Emergency Response Mapping',
+    description:
+      'Turns scattered emergency calls, texts and app reports into one live map, so dispatchers can see exactly where help is needed and who is closest to send. Firebase handles the live data, staff auth and photo storage.',
+    tags: ['HTML', 'CSS', 'JavaScript', 'Firebase'],
+    view: 'https://wisdomvision001.github.io/siignal-firebase/',
+    source: 'https://github.com/Wisdomvision001/siignal-firebase',
+    image: 'assets/projects/siignal-firebase.jpg',
+  },
+  {
+    id: 'orbit',
+    title: 'ORBIT',
+    subtitle: 'Code / Data / Design — Studio Site',
+    description:
+      'A single-page studio site with a 3D orbit built entirely in CSS: three rings on independent axes, mouse parallax and tilt cards, with no Three.js and no dependencies.',
+    tags: ['HTML', 'CSS', 'JavaScript'],
+    view: 'https://wisdomvision001.github.io/ORBIT/',
+    source: 'https://github.com/Wisdomvision001/ORBIT',
+    image: 'assets/projects/orbit.jpg',
+  },
+  {
+    id: 'ledger',
+    title: 'Ledger',
+    subtitle: 'Budget & Expense Tracker',
+    description:
+      'A single-file budget tracker with live balance, income and expense totals, a category doughnut, a six-month trend chart and transactions that persist in the browser.',
+    tags: ['HTML', 'CSS', 'JavaScript', 'Chart.js'],
+    view: 'https://wisdomvision001.github.io/expense-tracker/',
+    source: 'https://github.com/Wisdomvision001/expense-tracker',
+    image: 'assets/projects/expense-tracker.jpg',
+  },
+  {
+    id: 'portfolio-v1',
+    title: 'Portfolio',
+    subtitle: 'Earlier Personal Site',
+    description:
+      'An earlier personal site built around interfaces, data and the space between them — a typographic, editorial layout in plain HTML, CSS and JavaScript.',
+    tags: ['HTML', 'CSS', 'JavaScript'],
+    view: 'https://wisdomvision001.github.io/my-portfolio/',
+    source: 'https://github.com/Wisdomvision001/my-portfolio',
+    image: 'assets/projects/my-portfolio.jpg',
   },
 ];
 
 export const EXPERIENCE = {
-  label: "03 · Experience",
+  label: '03 · Experience',
   heading: "Where I've Grown",
   items: [
     {

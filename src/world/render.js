@@ -141,12 +141,12 @@ function projectsIntroHtml() {
   </section>`;
 }
 
-function featuredProjectHtml(p, total) {
+function featuredProjectHtml(p, total, index) {
   const links = [
     p.view ? `<a class="pill-btn" href="${p.view}" target="_blank" rel="noopener">View Project ${arrow}</a>` : '',
     p.source ? `<a class="text-cta" href="${p.source}" target="_blank" rel="noopener">${ghIcon} Source Code</a>` : '',
   ].join('');
-  const number = `${String(1).padStart(2, '0')} / ${String(total).padStart(2, '0')}`;
+  const number = `${String(index + 1).padStart(2, '0')} / ${String(total).padStart(2, '0')}`;
   return `
   <section class="sec featured" id="project-${p.id}" data-sec="featured" data-title="${p.title}">
     <div class="pj-copy">
@@ -158,12 +158,12 @@ function featuredProjectHtml(p, total) {
       ${links ? `<div class="pj-actions r-fade">${links}</div>` : ''}
     </div>
     <div class="pj-stage" aria-hidden="true">
-      <div class="pj-device"><div class="scr" data-screen>${viewMap()}</div></div>
+      <div class="pj-device"><div class="scr" data-screen>${p.image ? `<img class="pj-shot" src="${p.image}" alt="${p.title} preview" loading="lazy" decoding="async">` : viewMap()}</div></div>
     </div>
-    <div class="pj-thumbs" role="tablist" aria-label="${p.title} views">
+    ${p.image ? '' : `<div class="pj-thumbs" role="tablist" aria-label="${p.title} views">
       <button class="pj-thumb on" role="tab" aria-selected="true" data-view="map"><span class="scr">${viewMap()}</span></button>
       <button class="pj-thumb" role="tab" aria-selected="false" data-view="guide"><span class="scr">${viewGuide()}</span></button>
-    </div>
+    </div>`}
   </section>`;
 }
 
@@ -230,7 +230,7 @@ export function renderWorld() {
       ${heroHtml()}
       ${aboutHtml()}
       ${projectsIntroHtml()}
-      ${PROJECTS.map((p) => featuredProjectHtml(p, PROJECT_TOTAL)).join('')}
+      ${PROJECTS.map((p, i) => featuredProjectHtml(p, PROJECT_TOTAL, i)).join('')}
       ${experienceHtml()}
       ${connectHtml()}
     </main>`;

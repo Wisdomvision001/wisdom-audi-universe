@@ -315,3 +315,13 @@
   .mouse::after { animation: none; }
   .world * { transition-duration: 0.01ms !important; }
 }
+
+/* real project screenshots inside the device frame */
+.pj-device .scr img.pj-shot {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  background: #0b0d11;
+}
